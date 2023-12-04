@@ -1,12 +1,18 @@
 import React from 'react';
 import './App.css';
+import { Header } from './layout/Header';
+import { Nav } from './sections/Nav';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-     Hello, samurai! Let's go!
+      <Header />
+      <Nav />
     </div>
   );
 }
 
 export default App;
+
+
+
