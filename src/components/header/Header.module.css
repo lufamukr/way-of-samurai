@@ -1,7 +1,9 @@
 /* не можна писати css стилі через дефіс {header.nav-nav}, тільки через нижнє підкреслення, хіба що {header['header.nav-nav']}, якщо потрібно призначити два стилі то - `${header.nav} ${header.bar}`*/
 .header {
   grid-area: h;
-  background-color: antiquewhite;
+  background-color: whitesmoke;
+  border: 1px solid black;
+  border-top: none;
 }
 
 .header img {

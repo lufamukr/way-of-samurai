@@ -1,0 +1,26 @@
+
+.title {
+  text-align: center;
+  color: blue;
+}
+
+.dialogs {
+  display: grid;
+  grid-template-columns: 2fr 6fr;
+}
+
+.dialogsItems {
+  padding: 10px;
+}
+
+.dialogsItems .active {
+  color: gold;
+}
+
+.dialogItem {
+  text-align: left;
+}
+
+.messages {
+  padding: 10px;
+}
