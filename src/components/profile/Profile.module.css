@@ -1,9 +1,9 @@
 
-.content img {
-  width: 100%;
-  object-fit: cover;
+.profileInfo {
+  padding: 25px;
 }
 
 .profileBox_image {
   max-width: 100%;
+  object-fit: cover;
 }

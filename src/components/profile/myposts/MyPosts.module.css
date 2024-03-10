@@ -1,4 +1,32 @@
 
 .posts {
-  color: white;
+  padding: 10px 25px;
+}
+
+.title {
+  color: gold;
+}
+
+.boxNewMsg {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px;
+}
+
+textarea {
+  margin-bottom: 5px;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 18px;
+  background-color: blue;
+  color: gold;
+}
+
+button {
+  padding: 5px;
+  width: 100px;
+  height: 25px;
+  font-weight: bold;
+  background-color: gold;
+  color: blue;
 }
