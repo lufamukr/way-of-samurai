@@ -8,37 +8,38 @@ import { BrowserRouter, Route } from "react-router-dom";
 import { News } from "./components/news/News";
 import { Music } from "./components/music/Music";
 import { Settings } from "./components/settings/Settings";
+import { ObjectAppStateType } from "./redux/state";
 
-const dialogsDate = [
-  { id: 1, name: "Michael Jordan" },
-  { id: 2, name: "Tyrese John Haliburton" },
-  { id: 3, name: "Domantas Sabonis" },
-];
-const messegesDate = [
-  { id: 1, msg: "Hi!!!" },
-  { id: 2, msg: "Indiana GoOO!" },
-  { id: 3, msg: "King's NBA is Sacramento" },
-];
 
-const forDialogs = () => {
-  return(<Dialogs mD={messegesDate} dD={dialogsDate} />)
-}
+type AppType = {
+  appState:ObjectAppStateType;
+};
 
-const App = () => {
+const App: React.FC<AppType> = (props) => {
+  const neJsxAFuncCompon = () => {
+    return <Dialogs mD={props.appState.dialogsPage.messegesDate} dD={props.appState.dialogsPage.dialogsDate} />;
+  };
+
+  const neJsxAFuncComponProfile = () => {
+    return <Profile postData={props.appState.profilePage.postDate} />;
+  };
+
   return (
     <BrowserRouter>
       <div className="app-wrappper">
         <Header />
-        <SideBar />
+        <SideBar sideBar={props.appState.sideBarPage}/>
         <div className="app-wrappper-content">
-          <Route
-            path="/dialogs"
-            component={forDialogs}
-          />
-          <Route path="/profile" component={Profile} />
+          <Route path="/dialogs" component={neJsxAFuncCompon} />
+          <Route path="/profile" component={neJsxAFuncComponProfile} />
           <Route path="/news" render={News} />
           <Route path="/playlist" render={Music} />
-          <Route path="/settings" render={() => {return <Settings />}} />
+          <Route
+            path="/settings"
+            render={() => {
+              return <Settings />;
+            }}
+          />
         </div>
       </div>
     </BrowserRouter>

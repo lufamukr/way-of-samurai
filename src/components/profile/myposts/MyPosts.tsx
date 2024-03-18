@@ -1,12 +1,13 @@
 import React from "react";
 import st from "./MyPosts.module.css";
 import { Post } from "./post/Post";
+import { PostDateType } from "../../../redux/state";
 
-export const MyPosts = () => {
-  const postDate = [
-    { likeCount: 100, postName: "Hi! Do you watch NBA games?" },
-    { likeCount: 2, postName: "Denver - future champ!?" },
-  ];
+type MyPostsType = {
+  postDa: Array<PostDateType>;
+}
+
+export const MyPosts = (props:MyPostsType) => {
 
   return (
     <div className={st.posts}>
@@ -17,7 +18,7 @@ export const MyPosts = () => {
       </div>
       <h2>Old Post</h2>
 
-      {postDate.map((p) => { return <Post msg={p.postName} likeValue={p.likeCount} />;})}
+      {props.postDa.map((p) => { return <Post msg={p.postName} likeValue={p.likeCount} />;})}
 
     </div>
   );

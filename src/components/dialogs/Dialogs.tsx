@@ -1,6 +1,7 @@
 import React from "react";
 import s from "./Dialogs.module.css";
 import { NavLink } from "react-router-dom";
+import { dDType, mDType } from "../../redux/state";
 
 type DialogItemType = {
   name: string;
@@ -25,16 +26,6 @@ type MessageType = {
 const Message = (props: MessageType) => {
   return <div className={s.message}>{props.text}</div>;
 };
-
-type dDType = {
-  id:number;
-  name: string;
-}
-
-type mDType = {
-  id:number;
-  msg: string;
-}
 
 type DialogsType = {
   mD:Array<mDType>;

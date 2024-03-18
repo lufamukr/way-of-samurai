@@ -1,14 +1,17 @@
 import React from "react";
-import st from "./Profile.module.css";
 import { MyPosts } from "./myposts/MyPosts";
 import { ProfileInfo } from "../profile/profileInfo/ProfileInfo";
+import { PostDateType } from "../../redux/state";
 
+type ProfileType = {
+  postData: Array<PostDateType>;
+};
 
-export const Profile = () => {
+export const Profile = (props: ProfileType) => {
   return (
     <div>
       <ProfileInfo />
-      <MyPosts />
+      <MyPosts postDa={props.postData} />
     </div>
   );
 };
