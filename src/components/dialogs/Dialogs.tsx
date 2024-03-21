@@ -2,6 +2,7 @@ import React from "react";
 import s from "./Dialogs.module.css";
 import { NavLink } from "react-router-dom";
 import { dDType, mDType } from "../../redux/state";
+import { Message } from "./messages/Message";
 
 type DialogItemType = {
   name: string;
@@ -18,32 +19,12 @@ const DialogItem = (props: DialogItemType) => {
   );
 };
 
-type MessageType = {
-  text: string;
-  id: number
-};
-
-const Message = (props: MessageType) => {
-  return <div className={s.message}>{props.text}</div>;
-};
-
 type DialogsType = {
   mD:Array<mDType>;
   dD:Array<dDType>;
 }
 
 export const Dialogs = (props:DialogsType) => {
-
-  // const dialogsDate = [
-  //   { id: 1, name: "Michael Jordan" },
-  //   { id: 2, name: "Tyrese John Haliburton" },
-  //   { id: 3, name: "Domantas Sabonis" },
-  // ];
-  // const messegesDate = [
-  //   { id: 1, msg: "Hi!!!" },
-  //   { id: 2, msg: "Indiana GoOO!" },
-  //   { id: 3, msg: "King's NBA is Sacramento" },
-  // ];
 
   return (
     <div>
