@@ -91,15 +91,15 @@ export let store = {
   addPost() {
     let newPost = {
       id: 3,
-      postName: store.getState().profilePage.newPostText,
+      postName: store._state.profilePage.newPostText,
       likeCount: 0,
     };
-    store.getState().profilePage.postDate.push(newPost);
-    store.getState().profilePage.newPostText = "";
+    store._state.profilePage.postDate.push(newPost);
+    store._state.profilePage.newPostText = "";
     store.rerenderTree();
   },
   updatePostText: (postMessage: string) => {
-    store.getState().profilePage.newPostText = postMessage;
+    store._state.profilePage.newPostText = postMessage;
     store.rerenderTree();
   },
   subscriber: (callback: () => void) => {
