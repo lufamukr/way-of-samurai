@@ -18,7 +18,9 @@ export const MyPosts = (props: MyPostsType) => {
 
   const onPostChange = (e:ChangeEvent<HTMLTextAreaElement>) => {
     let postText = e.currentTarget.value;
-    props.updatePostText(postText);
+    if(postText !== undefined) {
+      props.updatePostText(postText);
+    } 
   };
 
   return (
